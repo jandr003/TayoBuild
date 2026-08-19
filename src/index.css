@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins";
+  background: #f8fafc;
+  color: #111827;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.hero-building-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-building-slider--desktop {
+  height: 100%;
+  width: 100%;
+}
+
+.hero-building-slider__image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: right center;
+  opacity: 0;
+  filter: brightness(1.1) contrast(0.9);
+  transform: translateX(34px) scale(1.02);
+  transition:
+    opacity 900ms ease,
+    transform 900ms ease;
+  will-change: opacity, transform;
+}
+
+.hero-building-slider__image--active {
+  opacity: 0.85;
+  transform: translateX(0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-building-slider__image {
+    transition: none;
+  }
+}
