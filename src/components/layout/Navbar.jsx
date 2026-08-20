@@ -37,6 +37,11 @@ export default function Navbar({ onHomeClick }) {
 
     if (link === 'About') {
       document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
+      return
+    }
+
+    if (link === 'Services') {
+      document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })
     }
   }
 

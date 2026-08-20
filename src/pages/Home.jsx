@@ -12,6 +12,7 @@ import reviewAvatarOne from '../assets/images/Ellipse 6.png'
 import reviewAvatarTwo from '../assets/images/Ellipse 07.png'
 import reviewAvatarThree from '../assets/images/Ellipse 08.png'
 import AboutSection from './AboutSection.jsx'
+import ServicesSelection from './ServicesSelection.jsx'
 
 const desktopBuildingSlides = [
   buildNowImage,
@@ -281,6 +282,7 @@ export default function Home({ reviewAnimationKey = 0 }) {
       </section>
 
       <AboutSection />
+      <ServicesSelection />
     </main>
   )
 }
