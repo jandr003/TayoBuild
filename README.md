@@ -102,6 +102,3 @@ TayoBuild is currently under active development using **React, JavaScript, Tailw
 
 This project is currently a work in progress. Additional features, pages, content, and improvements will be added as development continues.
 
-## 📄 License
-
-This project is currently under development for **TayoBuild**.
