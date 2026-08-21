@@ -5,10 +5,8 @@ import serviceBuildBlack from '../assets/images/Service_Build_black.png'
 import serviceBuildWhite from '../assets/images/Service_Build_white.png'
 import projectManagementBlack from '../assets/images/Project_Management_black.png'
 import projectManagementWhite from '../assets/images/Project_Management_white.png'
-// New: the notched card-shape backgrounds (put these two files in your assets/images folder)
 import cardShapeUnselected from '../assets/images/Card_Shape_Unselected.png'
 import cardShapeSelected from '../assets/images/Card_Shape_Selected.png'
-// New: the arrow-button images that sit in the notch (blue = unselected, black = selected)
 import arrowButtonUnselected from '../assets/images/arrow_skyblue-unselected.png'
 import arrowButtonSelected from '../assets/images/arrow_black-selected.png'
 
@@ -55,7 +53,6 @@ export default function ServicesSelection() {
 									isActive ? 'scale-[1.03]' : 'scale-100 hover:-translate-y-1'
 								}`}
 							>
-								{/* Card shape - unselected state (fades out when active/hovered) */}
 								<img
 									src={cardShapeUnselected}
 									alt=""
@@ -65,7 +62,6 @@ export default function ServicesSelection() {
 									draggable={false}
 								/>
 
-								{/* Card shape - selected/hover state (fades in when active/hovered) */}
 								<img
 									src={cardShapeSelected}
 									alt=""
@@ -75,7 +71,6 @@ export default function ServicesSelection() {
 									draggable={false}
 								/>
 
-								{/* Content sits above the two background shapes */}
 								{card.iconBlack && (
 									<img
 										src={card.iconBlack}
@@ -99,7 +94,7 @@ export default function ServicesSelection() {
 									{card.title}
 								</h3>
 
-								{/* Sits inside the notch that's already cut into the card shape image */}
+
 								<button
 									type="button"
 									onClick={(e) => {
@@ -109,7 +104,7 @@ export default function ServicesSelection() {
 									className="absolute bottom-0 right-0 z-10 h-[74px] w-[74px] active:scale-95"
 									aria-label={`Explore ${card.title}`}
 								>
-									{/* Unselected/default arrow button (blue) */}
+
 									<img
 										src={arrowButtonUnselected}
 										alt=""
@@ -118,7 +113,7 @@ export default function ServicesSelection() {
 										}`}
 										draggable={false}
 									/>
-									{/* Selected/hover arrow button (black) */}
+
 									<img
 										src={arrowButtonSelected}
 										alt=""
