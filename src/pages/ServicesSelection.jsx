@@ -1,7 +1,16 @@
 import { useState } from 'react'
-import { ArrowUpRight } from 'lucide-react'
 import onDemandBlack from '../assets/images/On demand services black.png'
 import onDemandWhite from '../assets/images/On-Demand_Services_white.png'
+import serviceBuildBlack from '../assets/images/Service_Build_black.png'
+import serviceBuildWhite from '../assets/images/Service_Build_white.png'
+import projectManagementBlack from '../assets/images/Project_Management_black.png'
+import projectManagementWhite from '../assets/images/Project_Management_white.png'
+// New: the notched card-shape backgrounds (put these two files in your assets/images folder)
+import cardShapeUnselected from '../assets/images/Card_Shape_Unselected.png'
+import cardShapeSelected from '../assets/images/Card_Shape_Selected.png'
+// New: the arrow-button images that sit in the notch (blue = unselected, black = selected)
+import arrowButtonUnselected from '../assets/images/arrow_skyblue-unselected.png'
+import arrowButtonSelected from '../assets/images/arrow_black-selected.png'
 
 const serviceCards = [
 	{
@@ -9,12 +18,20 @@ const serviceCards = [
 		iconBlack: onDemandBlack,
 		iconWhite: onDemandWhite,
 	},
-	{ title: 'Service & Build' },
-	{ title: 'Project Management' },
+	{
+		title: 'Service & Build',
+		iconBlack: serviceBuildBlack,
+		iconWhite: serviceBuildWhite,
+	},
+	{
+		title: 'Project Management',
+		iconBlack: projectManagementBlack,
+		iconWhite: projectManagementWhite,
+	},
 ]
 
 export default function ServicesSelection() {
-	const [selectedTitle, setSelectedTitle] = useState(serviceCards[0].title)
+	const [selectedTitle, setSelectedTitle] = useState(null)
 
 	return (
 		<section
@@ -34,40 +51,82 @@ export default function ServicesSelection() {
 							<article
 								key={card.title}
 								onClick={() => setSelectedTitle(card.title)}
-								className={`relative aspect-[0.76] cursor-pointer overflow-hidden rounded-[22px] transition-all duration-300 sm:aspect-[0.82] lg:rounded-[24px] ${
-									isActive
-										? 'bg-sky-400 shadow-xl shadow-sky-200 scale-[1.03] ring-2 ring-sky-500'
-										: 'bg-[#f4f4f4] hover:bg-[#ececec] scale-100'
+								className={`group relative aspect-[0.76] cursor-pointer transition-transform duration-300 sm:aspect-[0.82] ${
+									isActive ? 'scale-[1.03]' : 'scale-100 hover:-translate-y-1'
 								}`}
 							>
+								{/* Card shape - unselected state (fades out when active/hovered) */}
+								<img
+									src={cardShapeUnselected}
+									alt=""
+									className={`absolute inset-0 h-full w-full transition-opacity duration-300 ${
+										isActive ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'
+									}`}
+									draggable={false}
+								/>
+
+								{/* Card shape - selected/hover state (fades in when active/hovered) */}
+								<img
+									src={cardShapeSelected}
+									alt=""
+									className={`absolute inset-0 h-full w-full transition-opacity duration-300 ${
+										isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+									}`}
+									draggable={false}
+								/>
+
+								{/* Content sits above the two background shapes */}
 								{card.iconBlack && (
 									<img
-										src={isActive ? card.iconWhite : card.iconBlack}
+										src={card.iconBlack}
 										alt=""
-										className="absolute left-5 top-6 h-8 w-8 transition-opacity duration-300"
+										className="absolute left-5 top-6 z-10 h-8 w-8 transition-opacity duration-300 group-hover:opacity-0"
+									/>
+								)}
+								{card.iconWhite && (
+									<img
+										src={card.iconWhite}
+										alt=""
+										className="absolute left-5 top-6 z-10 h-8 w-8 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 									/>
 								)}
 
 								<h3
-									className={`absolute left-5 top-[76px] max-w-[70%] font-['Poppins'] text-[15px] font-semibold leading-snug transition-colors duration-300 ${
-										isActive ? 'text-white' : 'text-slate-900'
+									className={`absolute left-5 top-[76px] z-10 max-w-[70%] font-['Poppins'] text-[15px] font-semibold leading-snug transition-colors duration-300 ${
+										isActive ? 'text-white' : 'text-slate-900 group-hover:text-white'
 									}`}
 								>
 									{card.title}
 								</h3>
 
+								{/* Sits inside the notch that's already cut into the card shape image */}
 								<button
 									type="button"
 									onClick={(e) => {
 										e.stopPropagation()
 										setSelectedTitle(card.title)
 									}}
-									className={`absolute bottom-0 right-0 z-10 flex h-[62px] w-[62px] items-center justify-center rounded-[18px] text-white transition-all duration-300 active:scale-95 lg:h-[62px] lg:w-[62px] ${
-										isActive ? 'bg-black hover:bg-slate-800' : 'bg-sky-400 hover:bg-sky-500'
-									}`}
+									className="absolute bottom-0 right-0 z-10 h-[74px] w-[74px] active:scale-95"
 									aria-label={`Explore ${card.title}`}
 								>
-									<ArrowUpRight className="h-9 w-9" strokeWidth={1.8} />
+									{/* Unselected/default arrow button (blue) */}
+									<img
+										src={arrowButtonUnselected}
+										alt=""
+										className={`absolute inset-0 h-full w-full transition-opacity duration-300 ${
+											isActive ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'
+										}`}
+										draggable={false}
+									/>
+									{/* Selected/hover arrow button (black) */}
+									<img
+										src={arrowButtonSelected}
+										alt=""
+										className={`absolute inset-0 h-full w-full transition-opacity duration-300 ${
+											isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+										}`}
+										draggable={false}
+									/>
 								</button>
 							</article>
 						)
