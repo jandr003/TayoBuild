@@ -13,16 +13,22 @@ import arrowButtonSelected from '../assets/images/arrow_black-selected.png'
 const serviceCards = [
 	{
 		title: 'On-Demand Services',
+		description:
+			'We connect customers with skilled and verified professionals, ensuring fast and reliable repair, maintenance, and improvement services.',
 		iconBlack: onDemandBlack,
 		iconWhite: onDemandWhite,
 	},
 	{
 		title: 'Service & Build',
+		description:
+			'We manage the entire service process from booking to completion, ensuring fast, reliable, and quality work',
 		iconBlack: serviceBuildBlack,
 		iconWhite: serviceBuildWhite,
 	},
 	{
 		title: 'Project Management',
+		description:
+			'We manage every detail from scheduling and coordination to quality control, ensuring smooth and efficient service delivery.',
 		iconBlack: projectManagementBlack,
 		iconWhite: projectManagementWhite,
 	},
@@ -34,10 +40,10 @@ export default function ServicesSelection() {
 	return (
 		<section
 			id="services"
-			className="bg-white pl-4 pr-4 py-16 sm:pl-1 sm:pr-8 sm:py-20 lg:pl-0 lg:pr-[4.7%] lg:py-24"
+			className="bg-white px-4 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24"
 		>
 			<div className="mx-auto max-w-[1440px]">
-				<h2 className="font-['Poppins'] text-[24px] font-black leading-[1.25] text-slate-950 sm:text-[30px] lg:text-[34px] lg:-ml-10">
+				<h2 className="font-['Poppins'] text-[24px] font-black leading-[1.25] text-slate-950 sm:text-[30px] lg:text-[34px]">
 					Our expertise in carpentry and<br />maintenance services
 				</h2>
 
@@ -49,7 +55,7 @@ export default function ServicesSelection() {
 							<article
 								key={card.title}
 								onClick={() => setSelectedTitle(card.title)}
-								className={`group relative aspect-[0.76] cursor-pointer transition-transform duration-300 sm:aspect-[0.82] ${
+								className={`group relative aspect-[0.72] cursor-pointer transition-transform duration-300 sm:aspect-[0.78] ${
 									isActive ? 'scale-[1.03]' : 'scale-100 hover:-translate-y-1'
 								}`}
 							>
@@ -75,25 +81,34 @@ export default function ServicesSelection() {
 									<img
 										src={card.iconBlack}
 										alt=""
-										className="absolute left-5 top-6 z-10 h-8 w-8 transition-opacity duration-300 group-hover:opacity-0"
+										className="absolute left-5 top-[44px] z-10 h-28 w-28 transition-opacity duration-300 group-hover:opacity-0"
 									/>
 								)}
 								{card.iconWhite && (
 									<img
 										src={card.iconWhite}
 										alt=""
-										className="absolute left-5 top-6 z-10 h-8 w-8 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+										className="absolute left-5 top-[44px] z-10 h-28 w-28 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 									/>
 								)}
 
 								<h3
-									className={`absolute left-5 top-[76px] z-10 max-w-[70%] font-['Poppins'] text-[15px] font-semibold leading-snug transition-colors duration-300 ${
+									className={`absolute left-5 top-[186px] z-10 max-w-[90%] font-['Poppins'] text-[30px] font-semibold leading-snug transition-colors duration-300 ${
 										isActive ? 'text-white' : 'text-slate-900 group-hover:text-white'
 									}`}
 								>
 									{card.title}
 								</h3>
 
+								{card.description && (
+									<p
+										className={`absolute left-5 right-5 top-[280px] z-10 font-['Poppins'] text-[19px] font-normal leading-[1.45] transition-colors duration-300 ${
+											isActive ? 'text-white/90' : 'text-slate-700 group-hover:text-white/90'
+										}`}
+									>
+										{card.description}
+									</p>
+								)}
 
 								<button
 									type="button"
@@ -101,10 +116,22 @@ export default function ServicesSelection() {
 										e.stopPropagation()
 										setSelectedTitle(card.title)
 									}}
-									className="absolute bottom-0 right-0 z-10 h-[74px] w-[74px] active:scale-95"
+									className={`absolute bottom-14 left-5 z-10 font-['Poppins'] text-[36px] font-semibold underline underline-offset-4 transition-colors duration-300 ${
+										isActive ? 'text-white' : 'text-black group-hover:text-white'
+									}`}
+								>
+									Learn More
+								</button>
+
+								<button
+									type="button"
+									onClick={(e) => {
+										e.stopPropagation()
+										setSelectedTitle(card.title)
+									}}
+									className="absolute bottom-0 right-0 z-10 h-[88px] w-[77px] active:scale-95"
 									aria-label={`Explore ${card.title}`}
 								>
-
 									<img
 										src={arrowButtonUnselected}
 										alt=""
