@@ -42,6 +42,26 @@ export default function Navbar({ onHomeClick }) {
 
     if (link === 'Services') {
       document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })
+      return
+    }
+
+    if (link === 'Projects') {
+      document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
+      return
+    }
+
+    if (link === 'Locations') {
+      document.getElementById('locations')?.scrollIntoView({ behavior: 'smooth' })
+      return
+    }
+
+    if (link === 'Blog') {
+      document.getElementById('blog')?.scrollIntoView({ behavior: 'smooth' })
+      return
+    }
+
+    if (link === 'Contact') {
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
     }
   }
 
@@ -107,7 +127,7 @@ export default function Navbar({ onHomeClick }) {
 
           <button
             type="button"
-            onClick={() => setActiveLink('Contact')}
+            onClick={() => handleNavClick('Contact')}
             className="rounded-full bg-sky-400 px-6 py-2.5 text-xs font-extrabold text-white transition hover:bg-sky-500 active:scale-95"
           >
             Contact

@@ -1,12 +1,47 @@
-import arrowButtonUnselected from '../assets/images/arrow_skyblue-unselected.png'
+import vertexTowerImg from '../assets/images/VERTEX-TOWER.png'
+import prismDistrictImg from '../assets/images/Prism District.png'
+import ivoryPlazaImg from '../assets/images/IVORY PLAZA.png'
+import axisTowerImg from '../assets/images/Axis Tower.png'
+import metroPlazaImg from '../assets/images/METRO PLAZA.png'
+import centralVistaPointImg from '../assets/images/Central Vista Point.png'
 
 const projectCards = [
-	{ id: 1, name: 'Vertex Tower' },
-	{ id: 2, name: 'Prism District' },
-	{ id: 3, name: 'Ivory Plaza' },
-	{ id: 4, name: 'Axis Tower' },
-	{ id: 5, name: 'Metro Plaza' },
-	{ id: 6, name: 'Central Vista Point' },
+	{
+		id: 1,
+		name: 'Vertex Tower',
+		description: 'A modern commercial building with clean design and efficient spaces for business operations.',
+		image: vertexTowerImg,
+	},
+	{
+		id: 2,
+		name: 'Prism District',
+		description: 'A mixed-use development combining retail, office, and residential spaces in one location.',
+		image: prismDistrictImg,
+	},
+	{
+		id: 3,
+		name: 'Ivory Plaza',
+		description: 'An elegant commercial plaza designed for modern businesses and everyday convenience.',
+		image: ivoryPlazaImg,
+	},
+	{
+		id: 4,
+		name: 'Axis Tower',
+		description: 'A landmark office tower built for efficiency, comfort, and long-term durability.',
+		image: axisTowerImg,
+	},
+	{
+		id: 5,
+		name: 'Metro Plaza',
+		description: 'A centrally located commercial hub connecting businesses to the heart of the city.',
+		image: metroPlazaImg,
+	},
+	{
+		id: 6,
+		name: 'Central Vista Point',
+		description: 'A premium development offering panoramic views and versatile commercial spaces.',
+		image: centralVistaPointImg,
+	},
 ]
 
 function ArrowIcon() {
@@ -43,17 +78,41 @@ export default function ProjectsSelection() {
 					{projectCards.map((project) => (
 						<div
 							key={project.id}
-							className="flex aspect-[0.6] w-full items-center justify-center"
+							className="relative w-full overflow-hidden rounded-[24px] bg-[#232323] pb-16 transition-transform duration-300 hover:-translate-y-1"
 						>
-							<div className="relative h-[97%] w-[97%] overflow-hidden rounded-[24px] transition-transform duration-300 hover:-translate-y-1">
-								<div className="absolute inset-0 bg-[#111111]" />
-								<div className="absolute bottom-0 right-0 h-[14%] w-[18%] rounded-tl-[14px] bg-[#1c1c1c]" />
-								<div className="absolute bottom-0 right-0 top-auto h-[12%] w-[15%]">
-									<ArrowIcon />
+							<div className="p-4">
+								<div className="aspect-[1.1] w-full overflow-hidden rounded-[18px] bg-[#111111]">
+									{project.image ? (
+										<img
+											src={project.image}
+											alt={project.name}
+											className="h-full w-full object-cover"
+											draggable={false}
+										/>
+									) : null}
 								</div>
-								<p className="absolute bottom-[18%] left-[8%] font-['Poppins'] text-[18px] font-semibold text-white">
+
+								<h3 className="mt-5 font-['Poppins'] text-[22px] font-bold text-white">
 									{project.name}
-								</p>
+								</h3>
+
+								{project.description && (
+									<p className="mt-2 font-['Poppins'] text-[19px] leading-[1.5] text-gray-400">
+										{project.description}
+									</p>
+								)}
+
+								<button
+									type="button"
+									className="mt-4 font-['Poppins'] text-[15px] font-semibold text-white underline underline-offset-4"
+								>
+									Learn More
+								</button>
+							</div>
+
+							<div className="absolute bottom-0 right-0 h-[14%] w-[18%] rounded-tl-[14px] bg-[#1c1c1c]" />
+							<div className="absolute bottom-0 right-0 top-auto h-[12%] w-[15%]">
+								<ArrowIcon />
 							</div>
 						</div>
 					))}
