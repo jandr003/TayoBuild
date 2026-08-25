@@ -38,17 +38,15 @@ export default function LocationsSelection() {
     >
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:gap-16">
 
-        <div>
+        <div className="text-left">
           <h2
             style={{ color: '#020617' }}
             className="text-4xl font-extrabold leading-tight sm:text-5xl"
           >
-            Why business trust elite
-            <br />
-            builders Inc.?
+            Why business trust elite builders Inc.?
           </h2>
 
-          <p className="mt-6 max-w-md text-justify text-slate-500">
+          <p className="mt-6 max-w-md text-left text-slate-500">
             TayoBuild is a trusted service platform providing fast, reliable,
             and cost-effective repair and maintenance solutions. Our verified
             and skilled professionals ensure safe, high-quality workmanship

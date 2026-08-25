@@ -15,6 +15,7 @@ import AboutSection from './AboutSection.jsx'
 import ServicesSelection from './ServicesSelection.jsx'
 import ProjectsSelection from './ProjectsSelection.jsx'
 import LocationsSelection from './LocationsSelection.jsx'
+import BlogSelections from './BlogSelections.jsx'
 
 const desktopBuildingSlides = [
   buildNowImage,
@@ -287,6 +288,7 @@ export default function Home({ reviewAnimationKey = 0 }) {
       <ServicesSelection />
       <ProjectsSelection />
       <LocationsSelection />
+      <BlogSelections />
     </main>
   )
 }
