@@ -194,7 +194,7 @@ export default function Home({ reviewAnimationKey = 0 }) {
             </span>
           </p>
 
-          <div className="mt-12 flex flex-nowrap items-center gap-3 sm:gap-8">
+          <div className="mt-12 flex flex-wrap items-center gap-x-5 gap-y-4 sm:gap-x-8 lg:flex-nowrap lg:gap-3 lg:gap-x-8">
             <button
               type="button"
               className="inline-flex h-11 shrink-0 items-center gap-2 rounded-full bg-sky-400 px-4 font-['Poppins'] text-[12px] font-semibold text-white transition hover:bg-sky-500 active:scale-95 sm:h-12 sm:gap-3 sm:px-7 sm:text-[14px]"

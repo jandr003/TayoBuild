@@ -76,19 +76,18 @@ export default function ServicesSelection() {
 									}`}
 									draggable={false}
 								/>
-
 								{card.iconBlack && (
 									<img
 										src={card.iconBlack}
 										alt=""
-										className="absolute left-5 top-[44px] z-10 h-28 w-28 transition-opacity duration-300 group-hover:opacity-0"
+										className="absolute left-5 top-8 z-10 h-16 w-16 transition-opacity duration-300 group-hover:opacity-0 sm:top-10 sm:h-20 sm:w-20 lg:top-[44px] lg:h-28 lg:w-28"
 									/>
 								)}
 								{card.iconWhite && (
 									<img
 										src={card.iconWhite}
 										alt=""
-										className="absolute left-5 top-[44px] z-10 h-28 w-28 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+										className="absolute left-5 top-8 z-10 h-16 w-16 opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:top-10 sm:h-20 sm:w-20 lg:top-[44px] lg:h-28 lg:w-28"
 									/>
 								)}
 

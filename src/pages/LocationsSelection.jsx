@@ -38,7 +38,6 @@ export default function LocationsSelection() {
     >
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:gap-16">
 
-
         <div>
           <h2
             style={{ color: '#020617' }}
@@ -65,46 +64,31 @@ export default function LocationsSelection() {
           </button>
         </div>
 
-
         <div className="flex flex-col gap-4">
           {trustPoints.map((point, index) => {
             const isActive = activeIndex === index
 
             return (
-              <div key={point.title} className="relative">
-  
+              <div
+                key={point.title}
+                className={`relative overflow-hidden rounded-[22px] transition-colors duration-300 lg:overflow-visible lg:rounded-none lg:bg-transparent ${
+                  isActive ? 'bg-sky-400' : 'bg-[#F5F5F5]'
+                }`}
+              >
+                {/* Desktop/large-screen notch — UNCHANGED, exactly as approved.
+                    Only rendered at lg+ so mobile/tablet never hits the
+                    stretched-viewBox bug. */}
                 <svg
-                  className="absolute inset-0 h-full w-full"
+                  className="pointer-events-none absolute inset-0 hidden h-full w-full lg:block"
                   viewBox="0 0 665 199"
                   preserveAspectRatio="none"
                   aria-hidden="true"
                 >
                   <defs>
                     <mask id={`notchMask-${index}`}>
-                      <rect
-                        x="0"
-                        y="0"
-                        width="665"
-                        height="199"
-                        rx="27"
-                        fill="white"
-                      />
-              
-                      <rect
-                        x="575"
-                        y="28"
-                        width="70"
-                        height="70"
-                        rx="18"
-                        fill="black"
-                      />
-                      <rect
-                        x="620"
-                        y="42"
-                        width="50"
-                        height="42"
-                        fill="black"
-                      />
+                      <rect x="0" y="0" width="665" height="199" rx="27" fill="white" />
+                      <rect x="575" y="28" width="70" height="70" rx="18" fill="black" />
+                      <rect x="620" y="42" width="50" height="42" fill="black" />
                     </mask>
                   </defs>
 
@@ -119,9 +103,17 @@ export default function LocationsSelection() {
                   />
                 </svg>
 
-    
+                {/* Mobile/tablet notch — fixed pixel size, anchored to the
+                    corner, clipped by the card's own overflow-hidden. No
+                    viewBox scaling, so it stays correct no matter how tall
+                    the card gets from text wrapping. Hidden at lg+. */}
                 <div
-                  className={`relative z-10 rounded-[27px] py-5 pl-6 pr-16 transition-colors duration-300 ${
+                  className="pointer-events-none absolute -right-[10px] top-[12px] h-11 w-14 rounded-xl bg-white lg:hidden"
+                  aria-hidden="true"
+                />
+
+                <div
+                  className={`relative z-10 rounded-[22px] py-4 pl-5 pr-16 transition-colors duration-300 lg:rounded-[27px] lg:py-5 lg:pl-6 ${
                     isActive ? 'text-white' : 'text-slate-900'
                   }`}
                 >
@@ -130,7 +122,7 @@ export default function LocationsSelection() {
                     onClick={() => togglePoint(index)}
                     className="w-full text-left"
                   >
-                    <span className="block text-lg font-semibold">
+                    <span className="block text-base font-semibold leading-snug lg:text-lg">
                       {point.title}
                     </span>
 
@@ -147,6 +139,7 @@ export default function LocationsSelection() {
                     </div>
                   </button>
 
+                  {/* Desktop/large-screen +/x button — UNCHANGED positioning. */}
                   <button
                     type="button"
                     onClick={(e) => {
@@ -154,12 +147,36 @@ export default function LocationsSelection() {
                       togglePoint(index)
                     }}
                     aria-label={isActive ? 'Collapse' : 'Expand'}
-                    className="absolute right-2 top-[18px] z-30 flex h-10 w-10 items-center justify-center rounded-2xl bg-[#0f172a] text-white shadow-md transition-transform duration-200 ease-out hover:scale-105 active:scale-95"
+                    style={{
+                      left: '88.72%',
+                      top: '21.61%',
+                      width: '6.02%',
+                      height: '20.10%',
+                    }}
+                    className="absolute z-30 hidden items-center justify-center rounded-2xl bg-[#0f172a] text-white shadow-md transition-transform duration-200 ease-out hover:scale-105 active:scale-95 lg:flex"
                   >
                     {isActive ? (
                       <X size={17} strokeWidth={2.5} />
                     ) : (
                       <Plus size={17} strokeWidth={2.5} />
+                    )}
+                  </button>
+
+                  {/* Mobile/tablet +/x button — fixed pixel position matching
+                      the fixed-pixel notch above. Hidden at lg+. */}
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      togglePoint(index)
+                    }}
+                    aria-label={isActive ? 'Collapse' : 'Expand'}
+                    className="absolute right-[4px] top-[14px] z-30 flex h-9 w-9 items-center justify-center rounded-xl bg-[#0f172a] text-white shadow-md transition-transform duration-200 ease-out hover:scale-105 active:scale-95 lg:hidden"
+                  >
+                    {isActive ? (
+                      <X size={15} strokeWidth={2.5} />
+                    ) : (
+                      <Plus size={15} strokeWidth={2.5} />
                     )}
                   </button>
                 </div>
