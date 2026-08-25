@@ -73,9 +73,7 @@ export default function LocationsSelection() {
                   isActive ? 'bg-sky-400' : 'bg-[#F5F5F5]'
                 }`}
               >
-                {/* Desktop/large-screen notch — UNCHANGED, exactly as approved.
-                    Only rendered at lg+ so mobile/tablet never hits the
-                    stretched-viewBox bug. */}
+
                 <svg
                   className="pointer-events-none absolute inset-0 hidden h-full w-full lg:block"
                   viewBox="0 0 665 199"
@@ -101,10 +99,6 @@ export default function LocationsSelection() {
                   />
                 </svg>
 
-                {/* Mobile/tablet notch — fixed pixel size, anchored to the
-                    corner, clipped by the card's own overflow-hidden. No
-                    viewBox scaling, so it stays correct no matter how tall
-                    the card gets from text wrapping. Hidden at lg+. */}
                 <div
                   className="pointer-events-none absolute -right-[10px] top-[12px] h-11 w-14 rounded-xl bg-white lg:hidden"
                   aria-hidden="true"
@@ -137,7 +131,6 @@ export default function LocationsSelection() {
                     </div>
                   </button>
 
-                  {/* Desktop/large-screen +/x button — UNCHANGED positioning. */}
                   <button
                     type="button"
                     onClick={(e) => {
@@ -160,8 +153,6 @@ export default function LocationsSelection() {
                     )}
                   </button>
 
-                  {/* Mobile/tablet +/x button — fixed pixel position matching
-                      the fixed-pixel notch above. Hidden at lg+. */}
                   <button
                     type="button"
                     onClick={(e) => {

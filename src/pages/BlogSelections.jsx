@@ -210,7 +210,6 @@ export default function BlogSelections() {
         </button>
       </div>
 
-      {/* Desktop: full 3-column grid, 2 rows for 6 reviews */}
       <div className="mt-10 hidden gap-6 lg:grid lg:grid-cols-3">
         {testimonials.map((review, index) => (
           <ReviewCard key={review.id} review={review} index={index} />
