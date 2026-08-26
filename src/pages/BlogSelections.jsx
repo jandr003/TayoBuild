@@ -47,7 +47,7 @@ const testimonials = [
       'Nag-book kami ng electrician for our rewiring project, dumating siya on time at maayos ang trabaho. Sulit sa presyo at walang extra charges.',
     title: 'Maayos at Walang Palusot',
     name: 'Jenny Reyes',
-    role: 'Homeowner, Pasig City',
+    role: 'Homeowner, Makati City',
     image:
       'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=900&h=700&fit=crop',
     avatar:
@@ -72,8 +72,8 @@ const testimonials = [
     quote:
       'Aircon technician diagnosed the issue in minutes and had it fixed the same day. Transparent quote before any work started, walang gulat sa bill.',
     title: 'Same-Day Fix, Transparent Pricing',
-    name: 'Ana Dela Cruz',
-    role: 'Homeowner, Caloocan City',
+    name: 'Arthur Mitchell',
+    role: 'Homeowner, Mandaluyong City',
     image:
       'https://images.unsplash.com/photo-1615774925655-a0e97fc85c14?w=900&h=700&fit=crop',
     avatar:

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ArrowUpRight, Star } from 'lucide-react'
+import { ArrowUpRight, Contact, Star } from 'lucide-react'
 import buildNowImage from '../assets/images/TAYOBUILD-NOW1.png'
 import maskGroupImage from '../assets/images/Mask group1.png'
 import solutionImage from '../assets/images/TayoBuildNow-Solution.png'
@@ -16,6 +16,7 @@ import ServicesSelection from './ServicesSelection.jsx'
 import ProjectsSelection from './ProjectsSelection.jsx'
 import LocationsSelection from './LocationsSelection.jsx'
 import BlogSelections from './BlogSelections.jsx'
+import ContactSelection from './ContactSelection.jsx'
 
 const desktopBuildingSlides = [
   buildNowImage,
@@ -289,6 +290,7 @@ export default function Home({ reviewAnimationKey = 0 }) {
       <ProjectsSelection />
       <LocationsSelection />
       <BlogSelections />
+      <ContactSelection />
     </main>
   )
 }
