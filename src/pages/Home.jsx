@@ -17,6 +17,7 @@ import ProjectsSelection from './ProjectsSelection.jsx'
 import LocationsSelection from './LocationsSelection.jsx'
 import BlogSelections from './BlogSelections.jsx'
 import ContactSelection from './ContactSelection.jsx'
+import Footer from './Footer.jsx'
 
 const desktopBuildingSlides = [
   buildNowImage,
@@ -291,6 +292,7 @@ export default function Home({ reviewAnimationKey = 0 }) {
       <LocationsSelection />
       <BlogSelections />
       <ContactSelection />
+      <Footer />
     </main>
   )
 }
