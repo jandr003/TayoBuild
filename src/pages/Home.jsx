@@ -197,18 +197,18 @@ export default function Home({ reviewAnimationKey = 0 }) {
             </span>
           </p>
 
-          <div className="mt-12 flex flex-wrap items-center gap-x-5 gap-y-4 sm:gap-x-8 lg:flex-nowrap lg:gap-3 lg:gap-x-8">
+          <div className="mt-12 flex flex-wrap items-center gap-x-2.5 gap-y-3 xs:gap-x-3 sm:gap-x-6 lg:gap-x-8">
             <button
               type="button"
-              className="inline-flex h-11 shrink-0 items-center gap-2 rounded-full bg-sky-400 px-4 font-['Poppins'] text-[12px] font-semibold text-white transition hover:bg-sky-500 active:scale-95 sm:h-12 sm:gap-3 sm:px-7 sm:text-[14px]"
+              className="inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full bg-sky-400 px-3 font-['Poppins'] text-[11px] font-semibold text-white transition hover:bg-sky-500 active:scale-95 sm:h-12 sm:gap-3 sm:px-7 sm:text-[14px]"
             >
               Book a Carpenter
-              <ArrowUpRight className="h-[15px] w-[15px] sm:h-[17px] sm:w-[17px]" strokeWidth={2.5} />
+              <ArrowUpRight className="h-[13px] w-[13px] sm:h-[17px] sm:w-[17px]" strokeWidth={2.5} />
             </button>
 
             <button
               type="button"
-              className="shrink-0 whitespace-nowrap font-['Poppins'] text-[12px] font-semibold text-slate-950 underline underline-offset-2 transition hover:text-sky-500 active:scale-95 sm:text-[14px]"
+              className="shrink-0 whitespace-nowrap font-['Poppins'] text-[11px] font-semibold text-slate-950 underline underline-offset-2 transition hover:text-sky-500 active:scale-95 sm:text-[14px]"
             >
               Get a free consultation
             </button>

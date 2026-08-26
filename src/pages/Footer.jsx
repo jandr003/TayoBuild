@@ -1,6 +1,8 @@
+import tayoBuildLogo from '../assets/images/TayoBuild-FooterNow.png'
+
 export default function Footer() {
   return (
-    <footer className="relative min-h-[220px] px-6 py-10 font-['Poppins'] sm:px-10 lg:px-[42px]">
+     <footer className="relative min-h-[280px] overflow-hidden px-6 py-10 font-['Poppins'] sm:min-h-[220px] sm:px-10 lg:px-[42px]">
       <svg
         className="pointer-events-none absolute inset-0 h-full w-full"
         viewBox="0 0 1390 220"
@@ -20,6 +22,34 @@ export default function Footer() {
         fill="#101012"
     />
       </svg>
+
+        <div className="absolute left-6 top-6 z-10 flex flex-col sm:left-10 sm:top-10 lg:left-[42px]">
+        <p className="text-sm text-white/80 max-sm:text-xs leading-tight max-sm:leading-tight">
+            Building the future with excellence
+        </p>
+
+        <div className="flex items-center gap-2 mt-1 max-sm:mt-0">
+            <img
+            src={tayoBuildLogo}
+            alt="TayoBuild Solutions"
+            className="h-44 w-auto max-sm:h-24"
+            />
+        </div>
+        </div>
+
+      <div className="absolute right-6 top-24 z-10 flex flex-col items-end gap-6 max-sm:top-24 sm:right-10 sm:top-16 lg:right-[42px] lg:top-16">
+        <nav className="flex max-w-[220px] flex-wrap justify-end gap-x-4 gap-y-1 text-right text-xs text-white/80 sm:max-w-none sm:gap-x-14 sm:text-sm">
+          <a href="#about" className="transition-opacity hover:opacity-70">About</a>
+          <a href="#services" className="transition-opacity hover:opacity-70">Services</a>
+          <a href="#projects" className="transition-opacity hover:opacity-70">Projects</a>
+          <a href="#blog" className="transition-opacity hover:opacity-70">Tools &amp; Resources</a>
+          <a href="#contact" className="transition-opacity hover:opacity-70">Contact</a>
+        </nav>
+
+        <p className="max-w-[220px] text-right text-[10px] leading-tight text-white/50 sm:max-w-none sm:text-xs">
+          Copyright @ 2026 TayoBuild Solution. | All Right Reserved
+        </p>
+      </div>
 
       <div className="absolute bottom-1 right-3 z-10 flex gap-3 max-sm:bottom-2 max-sm:right-1 max-sm:gap-2">
         <a href="#" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full bg-black transition-opacity hover:opacity-80 max-sm:h-[30px] max-sm:w-[30px]">

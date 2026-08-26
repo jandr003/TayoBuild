@@ -52,104 +52,53 @@ export default function ServicesSelection() {
 						const isActive = card.title === selectedTitle
 
 						return (
-							<article
-								key={card.title}
+						<article
+							key={card.title}
 								onClick={() => setSelectedTitle(card.title)}
 								className={`group relative aspect-[0.72] cursor-pointer transition-transform duration-300 sm:aspect-[0.78] ${
 									isActive ? 'scale-[1.03]' : 'scale-100 hover:-translate-y-1'
 								}`}
 							>
-								<img
-									src={cardShapeUnselected}
-									alt=""
-									className={`absolute inset-0 h-full w-full transition-opacity duration-300 ${
-										isActive ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'
-									}`}
-									draggable={false}
-								/>
+							<img src={cardShapeUnselected} alt="" className={`absolute inset-0 h-full w-full transition-opacity duration-300 ${isActive ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'}`} draggable={false} />
+							<img src={cardShapeSelected} alt="" className={`absolute inset-0 h-full w-full transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`} draggable={false} />
 
-								<img
-									src={cardShapeSelected}
-									alt=""
-									className={`absolute inset-0 h-full w-full transition-opacity duration-300 ${
-										isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-									}`}
-									draggable={false}
-								/>
-								{card.iconBlack && (
-									<img
-										src={card.iconBlack}
-										alt=""
-										className="absolute left-5 top-8 z-10 h-16 w-16 transition-opacity duration-300 group-hover:opacity-0 sm:top-10 sm:h-20 sm:w-20 lg:top-[44px] lg:h-28 lg:w-28"
-									/>
-								)}
-								{card.iconWhite && (
-									<img
-										src={card.iconWhite}
-										alt=""
-										className="absolute left-5 top-8 z-10 h-16 w-16 opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:top-10 sm:h-20 sm:w-20 lg:top-[44px] lg:h-28 lg:w-28"
-									/>
-								)}
+							{card.iconBlack && (
+								<img src={card.iconBlack} alt="" className="absolute left-5 top-8 z-10 h-16 w-16 transition-opacity duration-300 group-hover:opacity-0 sm:top-10 sm:h-20 sm:w-20 lg:top-[44px] lg:h-28 lg:w-28" />
+							)}
+							{card.iconWhite && (
+								<img src={card.iconWhite} alt="" className="absolute left-5 top-8 z-10 h-16 w-16 opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:top-10 sm:h-20 sm:w-20 lg:top-[44px] lg:h-28 lg:w-28" />
+							)}
 
-								<h3
-									className={`absolute left-5 top-[186px] z-10 max-w-[90%] font-['Poppins'] text-[30px] font-semibold leading-snug transition-colors duration-300 ${
-										isActive ? 'text-white' : 'text-slate-900 group-hover:text-white'
-									}`}
-								>
-									{card.title}
+							<div className="absolute inset-x-5 bottom-[100px] z-10 flex flex-col gap-2 sm:bottom-[110px] lg:bottom-[120px]">
+								<h3 className={`font-['Poppins'] text-[22px] font-semibold leading-snug transition-colors duration-300 sm:text-[26px] lg:text-[30px] ${isActive ? 'text-white' : 'text-slate-900 group-hover:text-white'}`}>
+								{card.title}
 								</h3>
 
 								{card.description && (
-									<p
-										className={`absolute left-5 right-5 top-[280px] z-10 font-['Poppins'] text-[19px] font-normal leading-[1.45] transition-colors duration-300 ${
-											isActive ? 'text-white/90' : 'text-slate-700 group-hover:text-white/90'
-										}`}
-									>
-										{card.description}
-									</p>
+								<p className={`font-['Poppins'] text-[15px] font-normal leading-[1.45] transition-colors duration-300 sm:text-[17px] lg:text-[19px] ${isActive ? 'text-white/90' : 'text-slate-700 group-hover:text-white/90'}`}>
+									{card.description}
+								</p>
 								)}
+							</div>
 
-								<button
-									type="button"
-									onClick={(e) => {
-										e.stopPropagation()
-										setSelectedTitle(card.title)
-									}}
-									className={`absolute bottom-14 left-5 z-10 font-['Poppins'] text-[36px] font-semibold underline underline-offset-4 transition-colors duration-300 ${
-										isActive ? 'text-white' : 'text-black group-hover:text-white'
-									}`}
-								>
-									Learn More
-								</button>
+							<button
+								type="button"
+								onClick={(e) => { e.stopPropagation(); setSelectedTitle(card.title) }}
+								className={`absolute bottom-6 left-5 z-10 font-['Poppins'] text-[22px] font-semibold underline underline-offset-4 transition-colors duration-300 sm:text-[28px] lg:text-[36px] ${isActive ? 'text-white' : 'text-black group-hover:text-white'}`}
+							>
+								Learn More
+							</button>
 
-								<button
-									type="button"
-									onClick={(e) => {
-										e.stopPropagation()
-										setSelectedTitle(card.title)
-									}}
-									className="absolute bottom-0 right-0 z-10 h-[88px] w-[77px] active:scale-95"
-									aria-label={`Explore ${card.title}`}
-								>
-									<img
-										src={arrowButtonUnselected}
-										alt=""
-										className={`absolute inset-0 h-full w-full transition-opacity duration-300 ${
-											isActive ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'
-										}`}
-										draggable={false}
-									/>
-
-									<img
-										src={arrowButtonSelected}
-										alt=""
-										className={`absolute inset-0 h-full w-full transition-opacity duration-300 ${
-											isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-										}`}
-										draggable={false}
-									/>
-								</button>
-							</article>
+							<button
+								type="button"
+								onClick={(e) => { e.stopPropagation(); setSelectedTitle(card.title) }}
+								className="absolute bottom-0 right-0 z-10 h-[72px] w-[63px] active:scale-95 sm:h-[88px] sm:w-[77px]"
+								aria-label={`Explore ${card.title}`}
+							>
+								<img src={arrowButtonUnselected} alt="" className={`absolute inset-0 h-full w-full transition-opacity duration-300 ${isActive ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'}`} draggable={false} />
+								<img src={arrowButtonSelected} alt="" className={`absolute inset-0 h-full w-full transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`} draggable={false} />
+							</button>
+						</article>
 						)
 					})}
 				</div>
