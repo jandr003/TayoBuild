@@ -1,5 +1,10 @@
 import { useState } from 'react'
 import { ArrowUpRight } from 'lucide-react'
+import emailjs from '@emailjs/browser'
+
+const EMAILJS_SERVICE_ID = 'service_nz7dnpg'
+const EMAILJS_TEMPLATE_ID = 'template_vsp9eoz'
+const EMAILJS_PUBLIC_KEY = 'ATAFr6hlEd9dpzJnx'
 
 export default function ContactSelection() {
   const [form, setForm] = useState({
@@ -8,6 +13,7 @@ export default function ContactSelection() {
     phone: '',
     message: '',
   })
+  const [status, setStatus] = useState('idle') 
 
   const handleChange = (field) => (e) => {
     setForm((prev) => ({ ...prev, [field]: e.target.value }))
@@ -15,7 +21,30 @@ export default function ContactSelection() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('Contact form submitted:', form)
+    setStatus('sending')
+
+    emailjs
+      .send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          phone: form.phone,
+          message: form.message,
+          to_email: 'jandrewgresola@gmail.com',
+          time: new Date().toLocaleString(),
+        },
+        EMAILJS_PUBLIC_KEY
+      )
+      .then(() => {
+        setStatus('success')
+        setForm({ name: '', email: '', phone: '', message: '' })
+      })
+      .catch((error) => {
+        console.error('EmailJS send failed:', error)
+        setStatus('error')
+      })
   }
 
   return (
@@ -116,11 +145,23 @@ export default function ContactSelection() {
 
           <button
             type="submit"
-            className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-sky-400 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-sky-500 active:scale-[0.99]"
+            disabled={status === 'sending'}
+            className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-sky-400 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-sky-500 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60"
           >
-            Submit
+            {status === 'sending' ? 'Sending...' : 'Submit'}
             <ArrowUpRight className="h-4 w-4" strokeWidth={2.5} aria-hidden="true" />
           </button>
+
+          {status === 'success' && (
+            <p className="text-center text-sm font-medium text-emerald-600">
+              Your message has been sent successfully. Thank you!
+            </p>
+          )}
+          {status === 'error' && (
+            <p className="text-center text-sm font-medium text-red-500">
+              We’re sorry, but your message could not be sent. Please try again later.
+            </p>
+          )}
         </form>
       </div>
     </section>
