@@ -7,7 +7,7 @@ The platform provides a straightforward and responsive way for customers to expl
 ## ✨ Features
 
 * **Responsive Landing Page**
-* **Hero Section**
+* **Home Section**
 * **About Section**
 * **Services Section**
 * **Project Showcase**
