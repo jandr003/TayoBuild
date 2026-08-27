@@ -1,12 +1,10 @@
 # TayoBuild
 
-**TayoBuild** is a modern construction and skilled-services website currently being developed to connect customers with trusted builders and skilled professionals for **repairs, renovations, maintenance, and home improvement projects**.
+**TayoBuild** is a modern construction and skilled-services platform that connects customers with verified professionals for **construction, repairs, renovations, maintenance, and improvement projects**.
 
-The project aims to provide a clean, responsive, and user-friendly platform where customers can explore services, view projects, learn more about TayoBuild, and easily get in touch.
+The platform provides a straightforward and responsive way for customers to explore available services, view completed projects, check service locations, learn more about TayoBuild, and submit inquiries.
 
 ## ✨ Features
-
-The following features are currently being developed:
 
 * **Responsive Landing Page**
 * **Hero Section**
@@ -15,23 +13,25 @@ The following features are currently being developed:
 * **Project Showcase**
 * **Locations Section**
 * **Contact Section**
+* **Responsive Navigation**
 * **Mobile-Friendly Design**
-* **Modern UI/UX**
+* **Interactive UI Elements**
+* **Contact Form**
 
 ## 🛠️ Technologies
 
-| Technology             | Purpose                                     |
-| ---------------------- | ------------------------------------------- |
-| **React**              | Frontend development and component-based UI |
-| **JavaScript**         | Application functionality and interactions  |
-| **Tailwind CSS**       | Responsive styling and UI design            |
-| **Vite**               | Development environment and build tooling   |
-| **Figma**              | UI/UX design and prototyping                |
-| **Visual Studio Code** | Development environment                     |
+| Technology             | Purpose                                         |
+| ---------------------- | ----------------------------------------------- |
+| **React**              | Frontend development and component-based UI     |
+| **JavaScript**         | Application functionality and user interactions |
+| **Tailwind CSS**       | Responsive styling and interface design         |
+| **Vite**               | Development server and build tooling            |
+| **Figma**              | UI/UX design and prototyping                    |
+| **Visual Studio Code** | Development environment                         |
 
 ## 📋 Requirements
 
-Before running the project, make sure the following are installed:
+Before running the project, ensure the following are installed:
 
 * **Node.js 18 or later**
 * **npm**
@@ -64,7 +64,7 @@ npm install
 npm run dev
 ```
 
-The application will be available at the local development address provided by Vite, typically:
+The application will run at the local development address provided by Vite, typically:
 
 ```text
 http://localhost:5173
@@ -72,32 +72,34 @@ http://localhost:5173
 
 ## 🎯 Project Purpose
 
-TayoBuild is being developed to provide a modern digital platform for construction and skilled-service businesses, making it easier for customers to:
+TayoBuild provides a digital platform for construction and skilled-services businesses, allowing customers to:
 
-* Discover available services
-* Explore projects
+* Explore available services
+* View completed projects
+* Check service locations
 * Learn more about the company
-* View service locations
-* Get in touch for inquiries
+* Submit service inquiries
 
 ## 🎨 Design
 
-The TayoBuild interface is being designed with a focus on:
+The website follows a clean and modern visual approach focused on:
 
-* Clean and modern visual presentation
-* Intuitive navigation
 * Responsive layouts
+* Clear navigation
 * Consistent branding
-* User-friendly interactions
+* Accessible user interactions
+* Professional presentation across devices
 
-UI/UX concepts and designs are being developed using **Figma**.
+The website's UI/UX concepts and layouts were developed using **Figma**.
 
 ## 💻 Development
 
-TayoBuild is currently under active development using **React, JavaScript, Tailwind CSS, and Vite**. Features and pages are being implemented and refined progressively.
+The main website has been completed using **React, JavaScript, Tailwind CSS, and Vite**. Core pages, responsive layouts, navigation, interactive elements, and contact functionality have been implemented.
+
+Minor content and interface refinements are currently being finalized prior to the next production deployment.
 
 ## 📌 Project Status
 
-**Current Status: 🚧 In Development**
+**Current Status: ✅ Main Development Completed**
 
-This project is currently a work in progress. Additional features, pages, content, and improvements will be added as development continues.
+The primary development and implementation of the TayoBuild website have been completed. Final content and interface refinements are currently being applied before the next production deployment.
