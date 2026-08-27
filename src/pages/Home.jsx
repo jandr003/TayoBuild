@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { ArrowUpRight, Contact, Star } from 'lucide-react'
 import buildNowImage from '../assets/images/TAYOBUILD-NOW1.png'
 import maskGroupImage from '../assets/images/Mask group1.png'
@@ -43,24 +43,24 @@ function ReviewCard({
 }) {
   const [ratingValue, setRatingValue] = useState(4.6)
   const [reviewCount, setReviewCount] = useState(1000)
+  const cardRef = useRef(null)
+  const animationFrameRef = useRef(null)
 
-  useEffect(() => {
-    if (!animationKey) {
-      return undefined
-    }
-
+  const runReviewStatsAnimation = () => {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
 
     if (reducedMotion.matches) {
       setRatingValue(4.6)
       setReviewCount(1000)
-      return undefined
+      return
+    }
+
+    if (animationFrameRef.current) {
+      window.cancelAnimationFrame(animationFrameRef.current)
     }
 
     const duration = 900
     const startTime = performance.now()
-    let frameId
-
     const animateReviewStats = (currentTime) => {
       const progress = Math.min((currentTime - startTime) / duration, 1)
       const easedProgress = 1 - Math.pow(1 - progress, 3)
@@ -69,23 +69,62 @@ function ReviewCard({
       setReviewCount(Math.round(easedProgress * 1000))
 
       if (progress < 1) {
-        frameId = window.requestAnimationFrame(animateReviewStats)
+        animationFrameRef.current = window.requestAnimationFrame(animateReviewStats)
         return
       }
 
       setRatingValue(4.6)
       setReviewCount(1000)
+      animationFrameRef.current = null
     }
 
     setRatingValue(0)
     setReviewCount(0)
-    frameId = window.requestAnimationFrame(animateReviewStats)
+    animationFrameRef.current = window.requestAnimationFrame(animateReviewStats)
+  }
 
-    return () => window.cancelAnimationFrame(frameId)
+  useEffect(() => {
+    if (!animationKey) {
+      return undefined
+    }
+
+    runReviewStatsAnimation()
+
+    return () => {
+      if (animationFrameRef.current) {
+        window.cancelAnimationFrame(animationFrameRef.current)
+      }
+    }
   }, [animationKey])
+
+  useEffect(() => {
+    const node = cardRef.current
+    if (!node) {
+      return undefined
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          runReviewStatsAnimation()
+        }
+      },
+      { threshold: 0.4 }
+    )
+
+    observer.observe(node)
+
+    return () => {
+      observer.disconnect()
+      if (animationFrameRef.current) {
+        window.cancelAnimationFrame(animationFrameRef.current)
+      }
+    }
+  }, [])
 
   return (
     <div
+      ref={cardRef}
       className={`flex flex-col items-start justify-center rounded-xl bg-white font-['Poppins'] text-left shadow-[0_18px_40px_rgba(15,23,42,0.12)] ring-1 ring-slate-200/80 ${className}`}
       aria-label={`${ratingValue.toFixed(1)} rating from ${reviewCount.toLocaleString()}+ reviews`}
     >

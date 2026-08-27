@@ -63,19 +63,19 @@ export default function ServicesSelection() {
 							<img src={cardShapeSelected} alt="" className={`absolute inset-0 h-full w-full transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`} draggable={false} />
 
 							{card.iconBlack && (
-								<img src={card.iconBlack} alt="" className="absolute left-5 top-8 z-10 h-16 w-16 transition-opacity duration-300 group-hover:opacity-0 sm:top-10 sm:h-20 sm:w-20 lg:top-[44px] lg:h-28 lg:w-28" />
+								<img src={card.iconBlack} alt="" className="absolute left-5 top-8 z-10 h-28 w-28 transition-opacity duration-300 group-hover:opacity-0 sm:top-10 sm:h-20 sm:w-20 lg:top-[44px] lg:h-28 lg:w-28" />
 							)}
 							{card.iconWhite && (
-								<img src={card.iconWhite} alt="" className="absolute left-5 top-8 z-10 h-16 w-16 opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:top-10 sm:h-20 sm:w-20 lg:top-[44px] lg:h-28 lg:w-28" />
+								<img src={card.iconWhite} alt="" className="absolute left-5 top-8 z-10 h-28 w-28 opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:top-10 sm:h-20 sm:w-20 lg:top-[44px] lg:h-28 lg:w-28" />
 							)}
 
-							<div className="absolute inset-x-5 bottom-[100px] z-10 flex flex-col gap-2 sm:bottom-[110px] lg:bottom-[120px]">
-								<h3 className={`font-['Poppins'] text-[22px] font-semibold leading-snug transition-colors duration-300 sm:text-[26px] lg:text-[30px] ${isActive ? 'text-white' : 'text-slate-900 group-hover:text-white'}`}>
+							<div className="absolute inset-x-5 bottom-[130px] z-10 flex flex-col gap-2 sm:bottom-[140px] lg:bottom-[120px]">
+								<h3 className={`font-['Poppins'] text-[25px] font-semibold leading-snug transition-colors duration-300 sm:text-[29px] lg:text-[30px] ${isActive ? 'text-white' : 'text-slate-900 group-hover:text-white'}`}>
 								{card.title}
 								</h3>
 
 								{card.description && (
-								<p className={`font-['Poppins'] text-[15px] font-normal leading-[1.45] transition-colors duration-300 sm:text-[17px] lg:text-[19px] ${isActive ? 'text-white/90' : 'text-slate-700 group-hover:text-white/90'}`}>
+								<p className={`font-['Poppins'] text-[17px] font-normal leading-[1.45] transition-colors duration-300 sm:text-[19px] lg:text-[19px] ${isActive ? 'text-white/90' : 'text-slate-700 group-hover:text-white/90'}`}>
 									{card.description}
 								</p>
 								)}
@@ -84,7 +84,7 @@ export default function ServicesSelection() {
 							<button
 								type="button"
 								onClick={(e) => { e.stopPropagation(); setSelectedTitle(card.title) }}
-								className={`absolute bottom-6 left-5 z-10 font-['Poppins'] text-[22px] font-semibold underline underline-offset-4 transition-colors duration-300 sm:text-[28px] lg:text-[36px] ${isActive ? 'text-white' : 'text-black group-hover:text-white'}`}
+								className={`absolute bottom-10 left-5 z-10 font-['Poppins'] text-[24px] font-semibold underline underline-offset-4 transition-colors duration-300 sm:bottom-12 sm:text-[30px] lg:bottom-6 lg:text-[36px] ${isActive ? 'text-white' : 'text-black group-hover:text-white'}`}
 							>
 								Learn More
 							</button>
