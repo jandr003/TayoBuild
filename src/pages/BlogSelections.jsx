@@ -1,6 +1,7 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { Star, ArrowUpRight, ArrowLeft, ArrowRight } from 'lucide-react'
 import ruezelAvatar from '../assets/images/Ellipse 09.png'
+import ReviewModal from './ReviewModal'
 
 const testimonials = [
   {
@@ -144,6 +145,7 @@ function ReviewCard({ review, index }) {
 
 export default function BlogSelections() {
   const scrollerRef = useRef(null)
+  const [isReviewModalOpen, setIsReviewModalOpen] = useState(false)
 
   const scrollByCard = (direction) => {
     const scroller = scrollerRef.current
@@ -172,6 +174,7 @@ export default function BlogSelections() {
 
           <button
             type="button"
+            onClick={() => setIsReviewModalOpen(true)}
             className="inline-flex items-center gap-2 rounded-full bg-sky-400 px-5 py-2.5 font-['Poppins'] text-[13px] font-semibold text-white transition hover:bg-sky-500"
           >
             Add a Review
@@ -226,12 +229,15 @@ export default function BlogSelections() {
         </button>
         <button
           type="button"
+          onClick={() => setIsReviewModalOpen(true)}
           className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-sky-400 px-5 py-3 font-['Poppins'] text-[13px] font-semibold text-white transition hover:bg-sky-500"
         >
           Add a Review
           <ArrowUpRight className="h-4 w-4" strokeWidth={2.5} aria-hidden="true" />
         </button>
       </div>
+
+      <ReviewModal isOpen={isReviewModalOpen} onClose={() => setIsReviewModalOpen(false)} />
     </section>
   )
 }
