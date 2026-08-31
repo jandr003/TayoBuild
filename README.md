@@ -28,8 +28,7 @@
 | **JavaScript**         | Website functionality and interactions       |
 | **Tailwind CSS**       | Styling and responsive layouts               |
 | **Vite**               | Development and build tool                   |
-| **Figma**              | UI/UX design and prototyping                 |
-| **Visual Studio Code** | Development environment                      |
+
 
 ## Project Purpose
 
