@@ -7,7 +7,7 @@
 [![Vite React Plugin](https://img.shields.io/badge/%40vitejs%2Fplugin--react-6.0.5-646CFF?style=flat-square\&logo=vite\&logoColor=white)](https://github.com/vitejs/vite-plugin-react)
 [![Lucide React](https://img.shields.io/badge/Lucide_React-1.32.0-F56565?style=flat-square\&logo=lucide\&logoColor=white)](https://lucide.dev/)
 
-**TayoBuild** makes it easier for customers to find the right construction and skilled services by bringing essential business information, service offerings, completed projects, and service locations into one website. With direct inquiry and feedback forms, customers can quickly explore what TayoBuild offers and get in touch with the business.
+TayoBuild connects customers with reliable construction and skilled services, making it easier to explore services, projects, and business information in one place.
 
 ### 🌐 Live Demo
 
