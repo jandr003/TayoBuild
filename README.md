@@ -1,10 +1,11 @@
 # TayoBuild
 
-[![React](https://img.shields.io/badge/React-61DAFB?style=flat-square\&logo=react\&logoColor=black)](https://react.dev/)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square\&logo=javascript\&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square\&logo=tailwindcss\&logoColor=white)](https://tailwindcss.com/)
-[![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square\&logo=vite\&logoColor=white)](https://vite.dev/)
-[![Lucide React](https://img.shields.io/badge/Lucide_React-F56565?style=flat-square\&logo=lucide\&logoColor=white)](https://lucide.dev/)
+[![React](https://img.shields.io/badge/React-19.2.8-61DAFB?style=flat-square\&logo=react\&logoColor=black)](https://react.dev/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-JSX-F7DF1E?style=flat-square\&logo=javascript\&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.3.3-06B6D4?style=flat-square\&logo=tailwindcss\&logoColor=white)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-8.2.1-646CFF?style=flat-square\&logo=vite\&logoColor=white)](https://vite.dev/)
+[![Vite React Plugin](https://img.shields.io/badge/%40vitejs%2Fplugin--react-6.0.5-646CFF?style=flat-square\&logo=vite\&logoColor=white)](https://github.com/vitejs/vite-plugin-react)
+[![Lucide React](https://img.shields.io/badge/Lucide_React-1.32.0-F56565?style=flat-square\&logo=lucide\&logoColor=white)](https://lucide.dev/)
 
 **TayoBuild** makes it easier for customers to find the right construction and skilled services by bringing essential business information, service offerings, completed projects, and service locations into one website. With direct inquiry and feedback forms, customers can quickly explore what TayoBuild offers and get in touch with the business.
 
