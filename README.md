@@ -6,7 +6,7 @@
 [![Vite](https://img.shields.io/badge/Vite-8.2.1-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vite.dev/)
 [![Vite React Plugin](https://img.shields.io/badge/%40vitejs%2Fplugin--react-6.0.5-646CFF?style=flat-square&logo=vite&logoColor=white)](https://github.com/vitejs/vite-plugin-react)
 [![Lucide React](https://img.shields.io/badge/Lucide_React-1.32.0-F56565?style=flat-square&logo=lucide&logoColor=white)](https://lucide.dev/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
+
 
 **Live Demo:** [tayobuild-solutions.netlify.app](https://tayobuild-solutions.netlify.app)
 
