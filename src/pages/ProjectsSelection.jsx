@@ -46,7 +46,7 @@ const projectCards = [
 
 function ArrowIcon() {
 	return (
-		<div className="flex h-full w-full items-center justify-center rounded-[18px] bg-[#38bdf8]">
+		<div className="flex h-full w-full items-center justify-center rounded-[14px] bg-[#38bdf8] sm:rounded-[16px] min-[1280px]:rounded-[18px]">
 			<svg
 				viewBox="0 0 24 24"
 				fill="none"
@@ -67,21 +67,21 @@ export default function ProjectsSelection() {
 	return (
 		<section
 			id="projects"
-			className="mx-auto my-10 max-w-[1350px] rounded-[24px] bg-[#1c1c1c] px-4 py-10 sm:px-8 sm:py-12 lg:px-12 lg:py-14"
+			className="mx-auto my-10 max-w-[1350px] rounded-[24px] bg-[#1c1c1c] px-4 py-10 sm:px-8 sm:py-12 lg:px-8 lg:py-14 min-[1280px]:px-12"
 		>
 			<div className="mx-auto max-w-[1250px]">
 				<h2 className="font-['Poppins'] text-[24px] font-black leading-[1.25] text-white sm:text-[30px] lg:text-[34px]">
 					Proven results in commercial construction
 				</h2>
 
-				<div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3 lg:gap-10">
+				<div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-6 min-[1280px]:gap-10">
 					{projectCards.map((project) => (
 						<div
 							key={project.id}
-							className="relative w-full overflow-hidden rounded-[24px] bg-[#232323] pb-16 transition-transform duration-300 hover:-translate-y-1"
+							className="relative flex h-full w-full flex-col overflow-hidden rounded-[24px] bg-[#232323] pb-[72px] transition-transform duration-300 hover:-translate-y-1 sm:pb-[100px] lg:pb-[68px] min-[1280px]:pb-[84px]"
 						>
-							<div className="p-4">
-								<div className="aspect-[1.1] w-full overflow-hidden rounded-[18px] bg-[#111111]">
+							<div className="flex flex-1 flex-col p-4 lg:p-3 min-[1280px]:p-4">
+								<div className="aspect-[1.1] w-full shrink-0 overflow-hidden rounded-[18px] bg-[#111111] lg:aspect-[1.25] min-[1280px]:aspect-[1.1]">
 									{project.image ? (
 										<img
 											src={project.image}
@@ -92,26 +92,28 @@ export default function ProjectsSelection() {
 									) : null}
 								</div>
 
-								<h3 className="mt-5 font-['Poppins'] text-[22px] font-bold text-white">
+								<h3 className="mt-5 font-['Poppins'] text-[22px] font-bold leading-snug text-white sm:text-[24px] lg:mt-4 lg:text-[18px] min-[1280px]:mt-5 min-[1280px]:text-[22px]">
 									{project.name}
 								</h3>
 
 								{project.description && (
-									<p className="mt-2 font-['Poppins'] text-[19px] leading-[1.5] text-gray-400">
+									<p className="mt-2 font-['Poppins'] text-[17px] leading-[1.5] text-gray-400 sm:text-[18px] lg:text-[14px] min-[1280px]:text-[19px]">
 										{project.description}
 									</p>
 								)}
 
-								<button
-									type="button"
-									className="mt-4 font-['Poppins'] text-[15px] font-semibold text-white underline underline-offset-4"
-								>
-									Learn More
-								</button>
+								<div className="mt-auto pt-4">
+									<button
+										type="button"
+										className="font-['Poppins'] text-[15px] font-semibold text-white underline underline-offset-4 sm:text-[16px] lg:text-[14px] min-[1280px]:text-[15px]"
+									>
+										Learn More
+									</button>
+								</div>
 							</div>
 
-							<div className="absolute bottom-0 right-0 h-[14%] w-[18%] rounded-tl-[14px] bg-[#1c1c1c]" />
-							<div className="absolute bottom-0 right-0 top-auto h-[12%] w-[15%]">
+							<div className="absolute bottom-0 right-0 h-[84px] w-[92px] rounded-tl-[18px] bg-[#1c1c1c] sm:h-[100px] sm:w-[110px] lg:h-[76px] lg:w-[84px] min-[1280px]:h-[80px] min-[1280px]:w-[88px]" />
+							<div className="absolute bottom-2 right-2 h-[64px] w-[64px] sm:bottom-1 sm:right-2.5 sm:h-[82px] sm:w-[76px] lg:bottom-1 lg:right-2 lg:h-[64px] lg:w-[58px] min-[1280px]:bottom-2 min-[1280px]:right-2 min-[1280px]:h-[58px] min-[1280px]:w-[58px]">
 								<ArrowIcon />
 							</div>
 						</div>

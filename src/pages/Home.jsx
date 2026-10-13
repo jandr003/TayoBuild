@@ -210,7 +210,7 @@ export default function Home({ reviewAnimationKey = 0 }) {
           <div className="absolute inset-y-0 left-0 w-[54%] bg-gradient-to-r from-white via-white/90 to-transparent" />
           <ReviewCard
             animationKey={reviewAnimationKey}
-            className="absolute bottom-7 right-[20%] h-[104px] w-[360px] px-5"
+            className="absolute top-7 right-6 h-[104px] w-[360px] px-5 min-[1360px]:top-auto min-[1360px]:bottom-7 min-[1360px]:right-[20%]"
             starClassName="h-9 w-9"
             ratingClassName="text-[26px]"
             reviewClassName="mt-2 text-[19px]"
@@ -220,7 +220,7 @@ export default function Home({ reviewAnimationKey = 0 }) {
         </div>
 
         <div className="relative z-10 mt-6 max-w-[980px]">
-          <h1 className="font-['Poppins'] text-[54px] font-black leading-[1.2] tracking-normal text-black sm:text-[64px] md:text-[72px] lg:text-[78px]">
+          <h1 className="font-['Poppins'] text-[54px] font-black leading-[1.2] tracking-normal text-black sm:text-[clamp(48px,8.3vw,72px)] lg:text-[78px]">
             <span className="block">Fixing spaces</span>
             <span className="block sm:whitespace-nowrap">
               one <span className="text-sky-400">project</span> at a time.
@@ -253,7 +253,7 @@ export default function Home({ reviewAnimationKey = 0 }) {
             </button>
           </div>
 
-          <div className="mt-16 grid max-w-[620px] grid-cols-2 items-center gap-x-7 gap-y-8 font-['Poppins'] sm:mt-[72px] sm:gap-x-12 lg:max-w-[800px] lg:grid-cols-3 lg:gap-x-12 lg:gap-y-0">
+          <div className="mt-16 grid max-w-[620px] grid-cols-2 items-center gap-x-7 gap-y-8 font-['Poppins'] sm:mt-[72px] sm:gap-x-12 md:max-w-[680px] md:grid-cols-3 md:gap-x-6 md:gap-y-0 lg:max-w-[800px] lg:grid-cols-3 lg:gap-x-12 lg:gap-y-0">
             <div className="flex min-w-0 items-center gap-2">
               <img
                 src={trustedImage}
@@ -265,7 +265,7 @@ export default function Home({ reviewAnimationKey = 0 }) {
                 <p className="text-[14px] font-bold leading-none text-slate-950">
                   Trusted
                 </p>
-                <p className="mt-1 text-[12px] font-medium leading-none text-neutral-500">
+                <p className="mt-1 text-[12px] font-medium leading-none text-neutral-700 [text-shadow:0_0_8px_rgba(255,255,255,0.9)]">
                   Verified Carpenters
                 </p>
               </div>
@@ -282,7 +282,7 @@ export default function Home({ reviewAnimationKey = 0 }) {
                 <p className="text-[14px] font-bold leading-none text-slate-950">
                   Fast and Easy
                 </p>
-                <p className="mt-1 text-[12px] font-medium leading-none text-neutral-500">
+                <p className="mt-1 text-[12px] font-medium leading-none text-neutral-700 [text-shadow:0_0_8px_rgba(255,255,255,0.9)]">
                   Quick Booking
                 </p>
               </div>
@@ -299,7 +299,7 @@ export default function Home({ reviewAnimationKey = 0 }) {
                 <p className="text-[14px] font-bold leading-none text-slate-950">
                   Quality Work
                 </p>
-                <p className="mt-1 text-[12px] font-medium leading-none text-neutral-500">
+                <p className="mt-1 text-[12px] font-medium leading-none text-neutral-700 [text-shadow:0_0_8px_rgba(255,255,255,0.9)]">
                   Satisfaction Guaranteed
                 </p>
               </div>
