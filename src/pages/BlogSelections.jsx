@@ -98,8 +98,8 @@ function StarRow({ rating }) {
 
 function ReviewCard({ review, index }) {
   return (
-    <article className="group flex h-full w-[300px] shrink-0 flex-col overflow-hidden rounded-2xl bg-[#F5F5F5] font-['Poppins'] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(15,23,42,0.10)] sm:w-[340px] md:w-full md:flex-row lg:flex-col lg:w-full">
-      <div className="relative h-[180px] w-full shrink-0 overflow-hidden md:h-[200px] md:w-[42%] lg:h-[160px] lg:w-full">
+    <article className="group flex h-full w-[300px] shrink-0 flex-col overflow-hidden rounded-2xl bg-[#F5F5F5] font-['Poppins'] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(15,23,42,0.10)] sm:w-[340px] md:w-[360px] lg:w-full">
+      <div className="relative h-[180px] w-full shrink-0 overflow-hidden md:h-[200px] lg:h-[160px]">
         <img
           src={review.image}
           alt=""
@@ -188,7 +188,7 @@ export default function BlogSelections() {
         className="mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] lg:hidden [&::-webkit-scrollbar]:hidden"
       >
         {testimonials.map((review, index) => (
-          <div key={review.id} className="snap-start">
+          <div key={review.id} className="shrink-0 snap-start">
             <ReviewCard review={review} index={index} />
           </div>
         ))}
